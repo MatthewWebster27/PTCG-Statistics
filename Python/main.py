@@ -3,6 +3,10 @@
 from card import Card
 from deck import Deck
 
+# CONSTANTS
+
+FILEPATH = "decklists.txt"
+
 # FUNCTION DEFINITIONS
 
 """
@@ -21,7 +25,7 @@ def getDecklists():
     decklists = []
     currentDecklist = [] # Temporary store while appending sections to a decklist
 
-    with open("decklists.txt", "r") as decklistsFile:
+    with open(FILEPATH, "r") as decklistsFile:
 
         """ 
         My terminal fails to render the 'é' character in 'Pokémon' correctly, so I used the 
@@ -47,7 +51,7 @@ def addDecklist(newDecklist,name):
     # We can only add the decklist if its name is unique, because it acts as the 'primary key'
 
     if isNameUnique(name):
-        with open("decklists.txt", "a") as decklistsFile:
+        with open(FILEPATH, "a") as decklistsFile:
             # By appending, the new decklist is written at the end of the text file
             decklistsFile.write("\n\nName: " + name + "\n\n" + newDecklist)
 
@@ -85,14 +89,11 @@ def removeDecklist(name):
 
     newDecklistsData = newDecklistsData.strip() # Remove trailing newlines
 
-    with open("decklists.txt","w") as decklistsFile:
+    with open(FILEPATH,"w") as decklistsFile:
         decklistsFile.write(newDecklistsData)
 
 # MAIN CODE
 
-# Commented the display of decklists so it can be re-used later
-
-"""
 decklists = getDecklists()
 count = 1 # Indicates the ordering of the decklists, incremented after each pass
 
@@ -103,6 +104,4 @@ for decklist in decklists:
         print(section + "\n")
 
     count += 1
-"""
 
-removeDecklist("Piper Lepine")
