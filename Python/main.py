@@ -10,7 +10,7 @@ FILEPATH = "decklists.txt"
 # FUNCTION DEFINITIONS
 
 """
-The function 'getDecklists' reads 'decklists.txt' and produces a list of decklists (2D list),
+The function 'getDecklists' reads the text file and produces a list of decklists (2D list),
 where each list contains four elements:
 
 - Name
@@ -43,7 +43,7 @@ def getDecklists():
 
 """
 The function 'addDecklist' takes a new decklist as a paramter (String) and its name (String),
-appending it to the 'decklists.txt' text file.
+appending it to the text file.
 """
 
 def addDecklist(newDecklist,name):

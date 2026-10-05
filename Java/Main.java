@@ -1,12 +1,11 @@
 package Java;
-// IMPORTS
 
-// FUNCTION DEFINITIONS
-
-// MAIN CODE
+/**
+ * Main is the first point of exectution for the software, activating other controllers.
+ */
 
 public class Main{
     public static void main(String[] args){
-        System.out.println("Hello world!");
+        // MAIN CODE
     }
 }
